@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 LABEL maintainer="ramoliya.biren@gmail.com"
 
 # Install without user input
-RUN DEBIAN_FRONTEND="noninteractive"
+ENV DEBIAN_FRONTEND noninteractive
 # install ARM GCC toolchain & suporting Tools
 RUN apt-get update -qq && apt-get install --no-install-recommends -y
 RUN apt-get install -y gcc

@@ -22,5 +22,8 @@ RUN apt-get install -y graphviz
 RUN apt-get install -y unzip 
 RUN apt-get install -y wget 
 
+# Install NRF SDK
 RUN wget -q https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v17.x.x/nRF5_SDK_17.0.2_d674dde.zip
-RUN tar -xzf nRF5_SDK_17.0.2_d674dde.zip /opt/NRF
+RUN mkdir /opt/nrf
+RUN unzip -qq nRF5_SDK_17.0.2_d674dde.zip -d /opt/nrf
+RUN rm nRF5_SDK_17.0.2_d674dde.zip

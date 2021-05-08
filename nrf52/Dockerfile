@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ghcr.io/ramoliyabiren/embedded_dockerbuilder/gccarm:dev
 
 LABEL maintainer="ramoliya.biren@gmail.com"
 
@@ -11,24 +11,6 @@ ENV NRFCLI_VERSION_2="1"
 
 # Install without user input
 ENV DEBIAN_FRONTEND noninteractive
-
-# install ARM GCC tool-chain & supporting Tools
-RUN apt-get update -qq && apt-get install --no-install-recommends -y \
-gcc \
-git \
-dos2unix \
-apt-utils \
-libyaml-dev \ 
-gcc-arm-none-eabi  \
-libnewlib-arm-none-eabi \
-binutils-arm-none-eabi \
-build-essential \
-make \
-cppcheck \
-doxygen \
-graphviz \
-unzip \
-wget 
 
 # Install NRF SDK
 RUN wget --no-check-certificate -q https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v${NRFSDK_SERIES}.x.x/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip
@@ -48,4 +30,3 @@ RUN tar xvf nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSI
 RUN dpkg -i nRFCommandLineTools/nRF-Command-Line-Tools_${NRFCLI_SERIES}_${NRFCLI_VERSION_1}_${NRFCLI_VERSION_2}_Linux-amd64.deb
 RUN rm -R nRFCommandLineTools
 RUN rm nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSION_2}Linuxamd64.tar.gz
-

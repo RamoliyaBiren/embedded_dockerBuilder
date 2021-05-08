@@ -3,11 +3,11 @@ FROM ubuntu:20.04
 LABEL maintainer="ramoliya.biren@gmail.com"
 
 # Define version
-ENV NRFSDK_SERIES           15
-ENV NRFSDK_VERSION          0.0_a53641a
-ENV NRFCLI_SERIES           10
-ENV NRFCLI_VERSION_1        12
-ENV NRFCLI_VERSION_2        1
+ENV NRFSDK_SERIES="15"
+ENV NRFSDK_VERSION="0.0_a53641a"
+ENV NRFCLI_SERIES="10"
+ENV NRFCLI_VERSION_1="12"
+ENV NRFCLI_VERSION_2="1"
 
 # Install without user input
 ENV DEBIAN_FRONTEND noninteractive

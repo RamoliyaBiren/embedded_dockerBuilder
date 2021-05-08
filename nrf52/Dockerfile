@@ -45,6 +45,7 @@ RUN echo "GNU_INSTALL_ROOT := /bin/"$'\r\n'"GNU_VERSION := $INSTALLED_GNU_VERSIO
 
 #install nRFCommandLine Tools
 RUN wget --no-check-certificate -q https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-${NRFCLI_SERIES}-x-x/${NRFCLI_SERIES}-${NRFCLI_VERSION_1}-${NRFCLI_VERSION_2}/nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSION_2}Linuxamd64.tar.gz
+RUN mkdir nRFCommandLineTools
 RUN tar xvf nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSION_2}Linuxamd64.tar.gz -C nRFCommandLineTools
 RUN dpkg -i nRFCommandLineTools/nRF-Command-Line-Tools_${NRFCLI_SERIES}_${NRFCLI_VERSION_1}_${NRFCLI_VERSION_2}_Linux-amd64.deb
 RUN rm -R nRFCommandLineTools

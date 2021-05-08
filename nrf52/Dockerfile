@@ -31,7 +31,7 @@ unzip \
 wget 
 
 # Get version info for tools
-ENV INSTALLED_GNU_VERSION echo arm-none-eabi-gcc -dumpversion
+ENV INSTALLED_GNU_VERSION=echo arm-none-eabi-gcc -dumpversion
 
 # Install NRF SDK
 RUN wget --no-check-certificate -q https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v${NRFSDK_SERIES}.x.x/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip

@@ -30,9 +30,6 @@ graphviz \
 unzip \
 wget 
 
-# Get version info for tools
-ENV INSTALLED_GNU_VERSION=echo arm-none-eabi-gcc -dumpversion
-
 # Install NRF SDK
 RUN wget --no-check-certificate -q https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v${NRFSDK_SERIES}.x.x/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip
 RUN mkdir /opt/nrf
@@ -41,7 +38,8 @@ RUN rm nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip
 ENV NRF51_SDK_DIR=/opt/nrf/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}
 
 # set Makefile.posix for SDK
-RUN echo "GNU_INSTALL_ROOT := /bin/"$'\r\n'"GNU_VERSION := $INSTALLED_GNU_VERSION"$'\r\n'"GNU_PREFIX := arm-none-eabi"$'\r\n' > ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
+RUN installed_arm_gcc_ver="$(arm-none-eabi-gcc -dumpversion)"
+RUN echo "GNU_INSTALL_ROOT := /bin/"$'\r\n'"GNU_VERSION := $installed_arm_gcc_ver"$'\r\n'"GNU_PREFIX := arm-none-eabi"$'\r\n' > ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
 
 #install nRFCommandLine Tools
 RUN wget --no-check-certificate -q https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-${NRFCLI_SERIES}-x-x/${NRFCLI_SERIES}-${NRFCLI_VERSION_1}-${NRFCLI_VERSION_2}/nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSION_2}Linuxamd64.tar.gz

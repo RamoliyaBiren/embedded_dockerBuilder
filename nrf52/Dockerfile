@@ -30,3 +30,4 @@ RUN tar xvf nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSI
 RUN dpkg -i nRFCommandLineTools/nRF-Command-Line-Tools_${NRFCLI_SERIES}_${NRFCLI_VERSION_1}_${NRFCLI_VERSION_2}_Linux-amd64.deb
 RUN rm -R nRFCommandLineTools
 RUN rm nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSION_2}Linuxamd64.tar.gz
+

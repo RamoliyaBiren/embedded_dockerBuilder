@@ -20,7 +20,8 @@ RUN rm nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip
 ENV NRF51_SDK_DIR=/opt/nrf/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}
 
 # set Makefile.posix for SDK
-RUN echo "GNU_INSTALL_ROOT := /bin/"$'\r\n'"GNU_VERSION := $(arm-none-eabi-gcc -dumpversion)"$'\r\n'"GNU_PREFIX := arm-none-eabi"$'\r\n' > ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
+RUN echo -e "GNU_INSTALL_ROOT := /bin/\r\nGNU_VERSION := $(arm-none-eabi-gcc -dumpversion)\r\nGNU_PREFIX := arm-none-eabi\r\n" > ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
+RUN cat ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
 
 #install nRFCommandLine Tools
 RUN wget --no-check-certificate -q https://www.nordicsemi.com/-/media/Software-and-other-downloads/Desktop-software/nRF-command-line-tools/sw/Versions-${NRFCLI_SERIES}-x-x/${NRFCLI_SERIES}-${NRFCLI_VERSION_1}-${NRFCLI_VERSION_2}/nRFCommandLineTools${NRFCLI_SERIES}${NRFCLI_VERSION_1}${NRFCLI_VERSION_2}Linuxamd64.tar.gz

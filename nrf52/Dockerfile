@@ -3,11 +3,11 @@ FROM ghcr.io/ramoliyabiren/embedded_dockerbuilder/gccarm:dev
 LABEL maintainer="ramoliya.biren@gmail.com"
 
 # Define version
-LABEL NRFSDK_SERIES="15"
-LABEL NRFSDK_VERSION="0.0_a53641a"
-LABEL NRFCLI_SERIES="10"
-LABEL NRFCLI_VERSION_1="12"
-LABEL NRFCLI_VERSION_2="1"
+ENV NRFSDK_SERIES="15"
+ENV NRFSDK_VERSION="0.0_a53641a"
+ENV NRFCLI_SERIES="10"
+ENV NRFCLI_VERSION_1="12"
+ENV NRFCLI_VERSION_2="1"
 
 # Install without user input
 ENV DEBIAN_FRONTEND noninteractive

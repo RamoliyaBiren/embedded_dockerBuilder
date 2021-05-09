@@ -20,7 +20,7 @@ RUN rm nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip
 ENV NRF51_SDK_DIR=/opt/nrf/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}
 
 # set Makefile.posix for SDK
-RUN /bin/bash -c "echo -e \"GNU_INSTALL_ROOT := /bin/\r\nGNU_VERSION := $(arm-none-eabi-gcc -dumpversion)\r\nGNU_PREFIX := arm-none-eabi\r\n" > \"${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix\""
+RUN echo -e "GNU_INSTALL_ROOT := /bin/\r\nGNU_VERSION := $(arm-none-eabi-gcc -dumpversion)\r\nGNU_PREFIX := arm-none-eabi\r\n" > ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
 RUN cat ${NRF51_SDK_DIR}/components/toolchain/gcc/Makefile.posix
 
 #install nRFCommandLine Tools

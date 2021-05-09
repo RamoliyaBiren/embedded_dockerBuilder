@@ -3,14 +3,17 @@ FROM ghcr.io/ramoliyabiren/embedded_dockerbuilder/gccarm:dev
 LABEL maintainer="ramoliya.biren@gmail.com"
 
 # Define version
-ENV NRFSDK_SERIES="15"
-ENV NRFSDK_VERSION="0.0_a53641a"
-ENV NRFCLI_SERIES="10"
-ENV NRFCLI_VERSION_1="12"
-ENV NRFCLI_VERSION_2="1"
+LABEL NRFSDK_SERIES="15"
+LABEL NRFSDK_VERSION="0.0_a53641a"
+LABEL NRFCLI_SERIES="10"
+LABEL NRFCLI_VERSION_1="12"
+LABEL NRFCLI_VERSION_2="1"
 
 # Install without user input
 ENV DEBIAN_FRONTEND noninteractive
+
+# use bash
+SHELL ["/bin/bash", "-c"] 
 
 # Install NRF SDK
 RUN wget --no-check-certificate -q https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v${NRFSDK_SERIES}.x.x/nRF5_SDK_${NRFSDK_SERIES}.${NRFSDK_VERSION}.zip

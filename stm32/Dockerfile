@@ -14,7 +14,5 @@ RUN wget --no-check-certificate -q https://www.st.com/content/ccc/resource/techn
 RUN mkdir /opt/st
 RUN unzip -qq en.st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh.zip -d /opt/st
 RUN rm en.st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh.zip
-#export STM_FORCE_CONSOLE=1
 RUN y | sh ./opt/st/st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh
-#RUN sh ./opt/st/st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh --noexec
-RUN rm st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh
+RUN rm /opt/st/st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh

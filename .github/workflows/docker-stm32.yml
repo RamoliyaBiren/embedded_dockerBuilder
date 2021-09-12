@@ -1,4 +1,4 @@
-name: Docker_NRF
+name: Docker_STM32
 
 on:
   push:

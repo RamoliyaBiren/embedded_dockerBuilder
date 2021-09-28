@@ -16,3 +16,4 @@ RUN unzip -qq en.st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh.z
 RUN rm en.st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh.zip
 RUN y | sh ./opt/st/st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh
 RUN rm /opt/st/st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh
+RUN ln -sf /opt/st/stm32cubeide_1.7.0/stm32cubeide /bin/

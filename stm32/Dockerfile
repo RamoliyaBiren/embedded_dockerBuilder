@@ -9,6 +9,7 @@ ENV LICENSE_ALREADY_ACCEPTED 1
 # Update
 RUN apt-get clean
 RUN apt-get update -qq
+RUN pip install esptool
 # Install STCubeIDE
 RUN wget --no-check-certificate -q https://www.st.com/content/ccc/resource/technical/software/sw_development_suite/group0/03/90/a4/d6/7c/f2/40/b0/stm32cubeide_deb/files/st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh.zip/jcr:content/translations/en.st-stm32cubeide_1.7.0_10852_20210715_0634_amd64.deb_bundle.sh.zip
 RUN mkdir /opt/st

@@ -17,5 +17,4 @@ RUN unzip -qq stm32cubeide.zip -d /opt/st
 RUN rm stm32cubeide.zip
 RUN y | sh ./opt/st/st-stm32cubeide_1.12.1_16088_20230420_1057_amd64.deb_bundle.sh
 RUN rm /opt/st/st-stm32cubeide_1.12.1_16088_20230420_1057_amd64.deb_bundle.sh
-RUN ls /opt/st/ -all
-RUN ln -sf /opt/st/stm32cubeide_1.12.0/stm32cubeide /bin/
+RUN ln -sf /opt/st/stm32cubeide_1.12.1/stm32cubeide /bin/

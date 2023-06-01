@@ -23,5 +23,7 @@ graphviz \
 unzip \
 python3.10 \
 python3-pip \
+bsdmainutils \
+nano \
 wget 
 
